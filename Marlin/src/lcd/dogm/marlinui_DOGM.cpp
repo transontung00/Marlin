@@ -175,8 +175,13 @@ bool MarlinUI::detected() { return true; }
         safe_delay(CUSTOM_BOOTSCREEN_TIMEOUT);
       #endif
     }
-  #endif // SHOW_CUSTOM_BOOTSCREEN
+  //#endif // SHOW_CUSTOM_BOOTSCREEN
+  void MarlinUI::show_bootscreen() {
+    TERN_(SHOW_CUSTOM_BOOTSCREEN, show_custom_bootscreen());
+  }
 
+  void MarlinUI::bootscreen_completion(const millis_t sofar) {}
+  #else
   // Two-part needed to display all info
   constexpr bool two_part = ((LCD_PIXEL_HEIGHT) - (START_BMPHEIGHT)) < ((MENU_FONT_ASCENT) * 2);
   constexpr uint8_t bootscreen_pages = 1 + two_part;
@@ -252,7 +257,7 @@ bool MarlinUI::detected() { return true; }
   void MarlinUI::bootscreen_completion(const millis_t sofar) {
     if ((BOOTSCREEN_TIMEOUT) / bootscreen_pages > sofar) safe_delay((BOOTSCREEN_TIMEOUT) / bootscreen_pages - sofar);
   }
-
+  #endif
 #endif // SHOW_BOOTSCREEN
 
 #if ENABLED(LIGHTWEIGHT_UI)

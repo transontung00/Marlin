@@ -251,11 +251,12 @@ void menu_info_board() {
   void menu_info_printer() {
     if (ui.use_click()) return ui.go_back();
     START_SCREEN();
-    STATIC_ITEM(MSG_MARLIN, SS_DEFAULT|SS_INVERT);                // Marlin
-    STATIC_ITEM_F(F(SHORT_BUILD_VERSION));                        // x.x.x-Branch
-    STATIC_ITEM_F(F(STRING_DISTRIBUTION_DATE));                   // YYYY-MM-DD HH:MM
-    STATIC_ITEM_F(F(MACHINE_NAME), SS_DEFAULT|SS_INVERT);         // My3DPrinter
-    STATIC_ITEM_F(F(WEBSITE_URL));                                // www.my3dprinter.com
+    STATIC_ITEM(MSG_MARLIN, SS_DEFAULT|SS_INVERT);              // Marlin
+    STATIC_ITEM_P(PSTR(SHORT_BUILD_VERSION));                   // x.x.x-Branch
+    // STATIC_ITEM_P(PSTR(STRING_DISTRIBUTION_DATE));              // YYYY-MM-DD HH:MM
+    STATIC_ITEM_P(PSTR(STRING_COMPILATION_DATE));              // YYYY-MM-DD HH:MM
+    STATIC_ITEM_P(PSTR(MACHINE_NAME), SS_DEFAULT|SS_INVERT);    // My3DPrinter
+    STATIC_ITEM_P(PSTR(WEBSITE_URL));                           // www.my3dprinter.com
     PSTRING_ITEM(MSG_INFO_EXTRUDERS, STRINGIFY(EXTRUDERS), SS_CENTER); // Extruders: 2
     #if HAS_LEVELING
       STATIC_ITEM(

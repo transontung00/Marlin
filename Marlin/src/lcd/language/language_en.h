@@ -529,7 +529,7 @@ namespace Language_en {
   LSTR MSG_FILAMENTUNLOAD_E               = _UxGT("Unload *");
   LSTR MSG_FILAMENTUNLOAD_ALL             = _UxGT("Unload All");
   LSTR MSG_ATTACH_MEDIA                   = _UxGT("Attach ") MEDIA_TYPE_EN;
-  LSTR MSG_CHANGE_MEDIA                   = _UxGT("Change ") MEDIA_TYPE_EN;
+  LSTR MSG_CHANGE_MEDIA                   = _UxGT("Refresh ") MEDIA_TYPE_EN;
   LSTR MSG_RELEASE_MEDIA                  = _UxGT("Release ") MEDIA_TYPE_EN;
   LSTR MSG_ZPROBE_OUT                     = _UxGT("Z Probe Past Bed");
   LSTR MSG_SKEW_FACTOR                    = _UxGT("Skew Factor");
