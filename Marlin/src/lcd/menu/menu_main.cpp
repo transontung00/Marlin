@@ -246,6 +246,7 @@ void menu_main() {
 
       if (card_detected) {
         if (!card_open) {
+          SUBMENU(MSG_MEDIA_MENU, MEDIA_MENU_GATEWAY);        // Media Menu (or Password First)
           #if PIN_EXISTS(SD_DETECT)
             GCODES_ITEM(MSG_CHANGE_MEDIA, PSTR("M21"));       // M21 Change Media
           #else                                               // - or -
@@ -258,7 +259,7 @@ void menu_main() {
               #endif
             });
           #endif
-          SUBMENU(MSG_MEDIA_MENU, MEDIA_MENU_GATEWAY);        // Media Menu (or Password First)
+          //SUBMENU(MSG_MEDIA_MENU, MEDIA_MENU_GATEWAY);        // Media Menu (or Password First)
         }
       }
       else {

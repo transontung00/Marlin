@@ -565,18 +565,18 @@ void menu_advanced_settings() {
     #endif
 
     // M203 / M205 - Feedrate items
-    SUBMENU(MSG_VELOCITY, menu_advanced_velocity);
+    //SUBMENU(MSG_VELOCITY, menu_advanced_velocity);
 
     // M201 - Acceleration items
-    SUBMENU(MSG_ACCELERATION, menu_advanced_acceleration);
+    //SUBMENU(MSG_ACCELERATION, menu_advanced_acceleration);
 
     #if HAS_CLASSIC_JERK
       // M205 - Max Jerk
       SUBMENU(MSG_JERK, menu_advanced_jerk);
     #elif HAS_JUNCTION_DEVIATION
-      EDIT_ITEM(float43, MSG_JUNCTION_DEVIATION, &planner.junction_deviation_mm, 0.001f, 0.3f
-        OPTARG(LIN_ADVANCE, planner.recalculate_max_e_jerk)
-      );
+      // EDIT_ITEM(float43, MSG_JUNCTION_DEVIATION, &planner.junction_deviation_mm, 0.001f, 0.3f
+      //   OPTARG(LIN_ADVANCE, planner.recalculate_max_e_jerk)
+      // );
     #endif
 
     // M851 - Z Probe Offsets
@@ -610,7 +610,7 @@ void menu_advanced_settings() {
   #endif
 
   #if DISABLED(NO_VOLUMETRICS) || ENABLED(ADVANCED_PAUSE_FEATURE)
-    SUBMENU(MSG_FILAMENT, menu_advanced_filament);
+    //SUBMENU(MSG_FILAMENT, menu_advanced_filament);
   #elif ENABLED(LIN_ADVANCE)
     #if EXTRUDERS == 1
       EDIT_ITEM(float42_52, MSG_ADVANCE_K, &planner.extruder_advance_K[0], 0, 10);
