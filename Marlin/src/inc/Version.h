@@ -49,6 +49,10 @@
   #define STRING_COMPILATION_DATE (__DATE__ " " __TIME__)
 #endif
 
+#ifndef STRING_COMPILATION_DATE
+  #define STRING_COMPILATION_DATE (__DATE__ " " __TIME__)
+#endif
+
 /**
  * Minimum Configuration.h and Configuration_adv.h file versions.
  * Set based on the release version number. Used to catch an attempt to use
